@@ -1,19 +1,17 @@
-# React JWT Auth Template
+# Movie Review Web
 
-## About
+___
 
-This repo is a React JWT Auth template meant to be paired with a back-end app utilizing JWT tokens.
+## Getting Started
 
-## Getting started
+___
 
-Fork and clone this repository to your local machine.
+## Technology Used
 
-After moving into the cloned directory, run `npm i` to download the dependencies.
+___
 
-Create a `.env` file in the root of the project and add the following:
+### Atributions
 
-```plaintext
-VITE_BACK_END_SERVER_URL=http://localhost:3000
-```
+___
 
-Start the app with `npm run dev`.
+### Next Steps
