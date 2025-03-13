@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { Routes, Route, useNavigate } from 'react-router';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import NavBar from './components/NavBar/NavBar';
 import SignUpForm from './components/SignUpForm/SignUpForm';
@@ -16,18 +16,15 @@ import { UserContext } from './contexts/UserContext';
 
 const App = () => {
   const { user } = useContext(UserContext);
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     const fetchAllReviews = async () => {
       const reviewsData = await reviewService.index();
-
-      // update to set state:
       setReviews(reviewsData);
     };
     if (user) fetchAllReviews();
   }, [user]);
-
-  const [reviews, setReviews] = useState([]);
 
   const navigate = useNavigate();
 
@@ -39,7 +36,6 @@ const App = () => {
 
   const handleDeleteReview = async (reviewId) => {
     const deletedReview = await reviewService.deleteReview(reviewId);
-    // Filter state using deletedReview._id:
     setReviews(reviews.filter((review) => review._id !== deletedReview._id));
     navigate('/reviews');
   };

@@ -68,6 +68,22 @@ async function update(hootId, hootFormData) {
     }
 }
 
+const createComment = async (reviewId, commentFormData) => {
+    try {
+        const res = await fetch(`${BASE_URL}/${reviewId}/comments`, {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(commentFormData),
+        });
+        return res.json();
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 const deleteComment = async (reviewId, commentId) => {
     try {
         const res = await fetch(`${BASE_URL}/${reviewId}/comments/${commentId}`, {

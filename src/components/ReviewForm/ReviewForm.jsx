@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import * as reviewService from '../../services/reviewService';
-import * as reviewService from '../../services/reviewService';
 
 const ReviewForm = (props) => {
     const { reviewId } = useParams(); // Get reviewId for editing mode
