@@ -1,23 +1,23 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import * as reviewService from '../../services/reviewService';
 
 const ReviewForm = (props) => {
-    const { reviewId } = useParams(); // Get reviewId for editing mode
+    const { reviewId } = useParams();
 
     const [formData, setFormData] = useState({
-        reviewTitle: '',
         movie: '',
         director: '',
         genre: 'Action',
         rating: '⭐️',
+        review: '',
     });
 
     const handleChange = (evt) => {
         setFormData({ ...formData, [evt.target.name]: evt.target.value });
     };
 
-    const handleSubmit = (evt) => {
+    const handleSubmit = async (evt) => { 
         evt.preventDefault();
         if (reviewId) {
             props.handleUpdateReview(reviewId, formData);
@@ -31,11 +31,11 @@ const ReviewForm = (props) => {
             try {
                 const reviewData = await reviewService.show(reviewId);
                 setFormData({
-                    reviewTitle: reviewData.reviewTitle || '',
                     movie: reviewData.movie || '',
                     director: reviewData.director || '',
                     genre: reviewData.genre || 'Action',
                     rating: reviewData.rating || '⭐️',
+                    review: reviewData.review || '',
                 });
             } catch (error) {
                 console.error('Error fetching review:', error);
@@ -44,14 +44,13 @@ const ReviewForm = (props) => {
 
         if (reviewId) fetchReview();
 
-        // Cleanup function to reset the form
         return () => {
             setFormData({
-                reviewTitle: '',
                 movie: '',
                 director: '',
                 genre: 'Action',
                 rating: '⭐️',
+                review: '',
             });
         };
     }, [reviewId]);
@@ -59,45 +58,15 @@ const ReviewForm = (props) => {
     return (
         <main>
             <h1>{reviewId ? 'Edit Review' : 'New Review'}</h1>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor='reviewTitle-input'>Review Title</label>
-                <input
-                    required
-                    type='text'
-                    name='reviewTitle'
-                    id='reviewTitle-input'
-                    value={formData.reviewTitle}
-                    onChange={handleChange}
-                />
-
+            <form onSubmit={handleSubmit}> {/* ✅ `handleSubmit` is now correctly referenced */}
                 <label htmlFor='movie-input'>Movie</label>
-                <input
-                    required
-                    type='text'
-                    name='movie'
-                    id='movie-input'
-                    value={formData.movie}
-                    onChange={handleChange}
-                />
+                <input required type='text' name='movie' id='movie-input' value={formData.movie} onChange={handleChange} />
 
                 <label htmlFor='director-input'>Director</label>
-                <input
-                    required
-                    type='text'
-                    name='director'
-                    id='director-input'
-                    value={formData.director}
-                    onChange={handleChange}
-                />
+                <input required type='text' name='director' id='director-input' value={formData.director} onChange={handleChange} />
 
                 <label htmlFor='genre-input'>Genre</label>
-                <select
-                    required
-                    name='genre'
-                    id='genre-input'
-                    value={formData.genre}
-                    onChange={handleChange}
-                >
+                <select required name='genre' id='genre-input' value={formData.genre} onChange={handleChange}>
                     <option value='Action'>Action</option>
                     <option value='Animation'>Animation</option>
                     <option value='Comedy'>Comedy</option>
@@ -108,19 +77,16 @@ const ReviewForm = (props) => {
                 </select>
 
                 <label htmlFor='rating-input'>Rating</label>
-                <select
-                    required
-                    name='rating'
-                    id='rating-input'
-                    value={formData.rating}
-                    onChange={handleChange}
-                >
+                <select required name='rating' id='rating-input' value={formData.rating} onChange={handleChange}>
                     <option value='⭐️'>⭐️</option>
                     <option value='⭐️⭐️'>⭐️⭐️</option>
                     <option value='⭐️⭐️⭐️'>⭐️⭐️⭐️</option>
                     <option value='⭐️⭐️⭐️⭐️'>⭐️⭐️⭐️⭐️</option>
                     <option value='⭐️⭐️⭐️⭐️⭐️'>⭐️⭐️⭐️⭐️⭐️</option>
                 </select>
+
+                <label htmlFor='review-input'>Your Review</label>
+                <textarea required name='review' id='review-input' value={formData.review} onChange={handleChange} />
 
                 <button type='submit'>SUBMIT</button>
             </form>

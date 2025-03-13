@@ -10,7 +10,7 @@ const SignInForm = () => {
   const [formData, setFormData] = useState({ username: '', password: '' });
 
   useEffect(() => {
-    if (user) {
+    if (user !== null) {
       navigate('/', { replace: true });
     }
   }, [user, navigate]);
@@ -25,7 +25,9 @@ const SignInForm = () => {
     try {
       const signedInUser = await signIn(formData);
       setUser(signedInUser);
-      navigate('/', { replace: true });
+      setTimeout(() => {
+        navigate('/', { replace: true });
+      }, 100);
     } catch (err) {
       setMessage(err.message);
     }
