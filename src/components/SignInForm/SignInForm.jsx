@@ -35,32 +35,19 @@ const SignInForm = () => {
 
   return (
     <main>
+      <img src="/src/assets/images/SignIn.png" alt="TV Remote" className="sign-in-logo" />
       <h1>Sign In</h1>
       <p>{message}</p>
       <form autoComplete='off' onSubmit={handleSubmit}>
         <div>
           <label htmlFor='username'>Username:</label>
-          <input
-            type='text'
-            id='username'
-            value={formData.username}
-            name='username'
-            onChange={handleChange}
-            required
-          />
+          <input type='text' id='username' value={formData.username} name='username' onChange={handleChange} required />
         </div>
         <div>
           <label htmlFor='password'>Password:</label>
-          <input
-            type='password'
-            id='password'
-            value={formData.password}
-            name='password'
-            onChange={handleChange}
-            required
-          />
+          <input type='password' id='password' value={formData.password} name='password' onChange={handleChange} required />
         </div>
-        <div>
+        <div className="form-buttons">
           <button>Sign In</button>
           <button type="button" onClick={() => navigate('/')}>Cancel</button>
         </div>

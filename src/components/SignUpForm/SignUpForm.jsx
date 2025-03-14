@@ -1,6 +1,5 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router';
-
 import { signUp } from '../../services/authService';
 import { UserContext } from '../../contexts/UserContext';
 
@@ -38,43 +37,23 @@ const SignUpForm = () => {
 
   return (
     <main>
+      <img src="/src/assets/images/SignUp.png" alt="3D Glasses" className="sign-up-logo" />
       <h1>Sign Up</h1>
       <p>{message}</p>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor='username'>Username:</label>
-          <input
-            type='text'
-            id='name'
-            value={username}
-            name='username'
-            onChange={handleChange}
-            required
-          />
+          <input type='text' id='name' value={username} name='username' onChange={handleChange} required />
         </div>
         <div>
           <label htmlFor='password'>Password:</label>
-          <input
-            type='password'
-            id='password'
-            value={password}
-            name='password'
-            onChange={handleChange}
-            required
-          />
+          <input type='password' id='password' value={password} name='password' onChange={handleChange} required />
         </div>
         <div>
           <label htmlFor='confirm'>Confirm Password:</label>
-          <input
-            type='password'
-            id='confirm'
-            value={passwordConf}
-            name='passwordConf'
-            onChange={handleChange}
-            required
-          />
+          <input type='password' id='confirm' value={passwordConf} name='passwordConf' onChange={handleChange} required />
         </div>
-        <div>
+        <div className="form-buttons">
           <button disabled={isFormInvalid()}>Sign Up</button>
           <button onClick={() => navigate('/')}>Cancel</button>
         </div>

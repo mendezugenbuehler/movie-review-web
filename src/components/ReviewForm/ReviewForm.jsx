@@ -57,8 +57,9 @@ const ReviewForm = (props) => {
 
     return (
         <main>
+            <img src="/src/assets/images/NewReview.png" alt="Popcorn" className="new-review" />
             <h1>{reviewId ? 'Edit Review' : 'New Review'}</h1>
-            <form onSubmit={handleSubmit}> {/* ✅ `handleSubmit` is now correctly referenced */}
+            <form onSubmit={handleSubmit}> 
                 <label htmlFor='movie-input'>Movie</label>
                 <input required type='text' name='movie' id='movie-input' value={formData.movie} onChange={handleChange} />
 
