@@ -35,7 +35,7 @@ const SignInForm = () => {
 
   return (
     <main>
-      <img src="/src/assets/images/SignIn.png" alt="TV Remote" className="sign-in-logo" />
+      <img src="/src/assets/images/SignIn.png" alt="TV Remote" className="signin" />
       <h1>Sign In</h1>
       <p>{message}</p>
       <form autoComplete='off' onSubmit={handleSubmit}>
