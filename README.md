@@ -33,3 +33,4 @@ ___
 ### Next Steps
 - Implement likes/up votes for reviews
 - Add a search & filter feature
+- Incorporate an API for additional movie details (poster, actors, etc) via [The MovieDB](https://www.themoviedb.org/?language=en-US)
