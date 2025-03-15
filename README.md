@@ -1,6 +1,6 @@
 # Movie Review Web
 
-![Movie Review App Logo](https://drive.google.com/file/d/13LjFK6peA9Xqz428I0nnp65tdL7WE-TT/view?usp=sharing)
+![Image](https://github.com/user-attachments/assets/0f3fe605-47bf-4363-a66a-1d14c9e8bfde)
 
 Movies are a big part of my life & a way that I can process, understand, and express within the world we live in.  Due to that, I watch a lot of movies and it can be difficult to keep track of every movie I've seen. 
 
