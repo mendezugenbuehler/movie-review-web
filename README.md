@@ -1,6 +1,6 @@
 # Movie Review Web
 
-![Movie Review App Logo](https://drive.google.com/file/d/13LjFK6peA9Xqz428I0nnp65tdL7WE-TT/view?usp=drive_link)
+![Movie Review App Logo](https://drive.google.com/file/d/13LjFK6peA9Xqz428I0nnp65tdL7WE-TT/view?usp=sharing)
 
 Movies are a big part of my life & a way that I can process, understand, and express within the world we live in.  Due to that, I watch a lot of movies and it can be difficult to keep track of every movie I've seen. 
 
@@ -15,7 +15,7 @@ ___
 ___
 
 ## Technology Used
-- **Front End:** React, React Router
+- **Front End:** Javascript (React, React Router), HTML5, CSS3
 - **Back-End:** Node.js, Express, MongoDb, Mongoose
 - **Authentication:** JWT (JSON Web Tokens)
 - **Deployment:** Netlify (Front End) & Heroku (Back End)
