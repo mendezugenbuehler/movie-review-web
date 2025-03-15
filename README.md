@@ -4,7 +4,7 @@
 
 Movies are a big part of my life & a way that I can process, understand, and express within the world we live in.  Due to that, I watch a lot of movies and it can be difficult to keep track of every movie I've seen. 
 
-To help with this challenge, I created a full-stack web-app for reviewing movies.  Users can write, edit and delete music reviews as well as comment on reviews by other users.  The app includes authentication, authorization and a modern UI for a clean user experienece.
+To help with this need, I created a full-stack web-app for reviewing movies.  Users can write, edit and delete music reviews as well as comment on reviews by other users.  The app includes authentication, authorization and a modern UI for a clean user experienece.
 
 ___
 
