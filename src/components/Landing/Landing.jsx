@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
+import landingImage from '../../assets/images/Landing.png'
 
 const Landing = () => {
   return (
     <main className="landing-page">
-      <img src="/src/assets/images/Landing.png" alt="Blank TV" className="landing" />
+      <img src={landingImage} alt="Blank-TV" className="landing" />
       <h1>Welcome to the Movie Review App!</h1>
       <p>This is where every review has a sequel & every opinion is a plot twist.</p>
       <p>

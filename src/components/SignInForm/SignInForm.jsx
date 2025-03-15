@@ -2,6 +2,7 @@ import { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signIn } from '../../services/authService';
 import { UserContext } from '../../contexts/UserContext';
+import signInImage from '../../assets/images/SignIn.png'
 
 const SignInForm = () => {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ const SignInForm = () => {
 
   return (
     <main>
-      <img src="/src/assets/images/SignIn.png" alt="TV Remote" className="signin" />
+      <img src={signInImage} alt="TV-Remote" className="signin" />
       <h1>Sign In</h1>
       <p>{message}</p>
       <form autoComplete='off' onSubmit={handleSubmit}>

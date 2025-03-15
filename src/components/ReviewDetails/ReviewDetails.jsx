@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from 'react';
 import * as reviewService from '../../services/reviewService';
 import CommentForm from '../CommentForm/CommentForm';
 import { UserContext } from '../../contexts/UserContext';
+import reviewDetailsImage from '../../assets/images/ReviewDetails.png'
 
 const ReviewDetails = (props) => {
   const { reviewId } = useParams();
@@ -34,7 +35,7 @@ const ReviewDetails = (props) => {
 
   return (
     <main>
-      <img src="/src/assets/images/ReviewDetails.png" alt="Film Strip" className="review" />
+      <img src={reviewDetailsImage} alt="Film-Strip" className="review" />
       <section>
         <header>
           <h1>{review.movie}</h1>

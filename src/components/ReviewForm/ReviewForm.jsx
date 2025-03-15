@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import * as reviewService from '../../services/reviewService';
+import newReviewImage from '../../assets/images/NewReview.png'
 
 const ReviewForm = (props) => {
     const { reviewId } = useParams();
@@ -57,7 +58,7 @@ const ReviewForm = (props) => {
 
     return (
         <main>
-            <img src="/src/assets/images/NewReview.png" alt="Popcorn" className="newreview" />
+            <img src={newReviewImage} alt="Popcorn" className="newreview" />
             <h1>{reviewId ? 'Edit Review' : 'New Review'}</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor='movie-input'>Movie</label>

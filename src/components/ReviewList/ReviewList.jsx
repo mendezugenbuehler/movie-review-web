@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
+import reviewsImage from '../../assets/images/Reviews.png'
 
 const ReviewList = (props) => {
     return (
         <main className="review-list-page">
-            <img src="/src/assets/images/Reviews.png" alt="VHS Tape" className="reviewlist" />
+            <img src={reviewsImage} alt="VHS-Tape" className="reviewlist" />
             <h1>Reviews</h1>
             <p>Here's what the viewers have to say:</p>
             <div className="review-container">
