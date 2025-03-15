@@ -17,7 +17,7 @@ const ReviewForm = (props) => {
         setFormData({ ...formData, [evt.target.name]: evt.target.value });
     };
 
-    const handleSubmit = async (evt) => { 
+    const handleSubmit = async (evt) => {
         evt.preventDefault();
         if (reviewId) {
             props.handleUpdateReview(reviewId, formData);
@@ -59,7 +59,7 @@ const ReviewForm = (props) => {
         <main>
             <img src="/src/assets/images/NewReview.png" alt="Popcorn" className="new-review" />
             <h1>{reviewId ? 'Edit Review' : 'New Review'}</h1>
-            <form onSubmit={handleSubmit}> 
+            <form onSubmit={handleSubmit}>
                 <label htmlFor='movie-input'>Movie</label>
                 <input required type='text' name='movie' id='movie-input' value={formData.movie} onChange={handleChange} />
 
@@ -89,7 +89,7 @@ const ReviewForm = (props) => {
                 <label htmlFor='review-input'>Your Review</label>
                 <textarea required name='review' id='review-input' value={formData.review} onChange={handleChange} />
 
-                <button type='submit'>SUBMIT</button>
+                <button type='submit'>Submit</button>
             </form>
         </main>
     );

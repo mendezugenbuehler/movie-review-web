@@ -34,43 +34,59 @@ const ReviewDetails = (props) => {
 
   return (
     <main>
+      <img src="/src/assets/images/ReviewDetails.png" alt="Film Strip" className="review" />
       <section>
         <header>
-          <h1>{review.reviewTitle}</h1>
+          <h1>{review.movie}</h1>
           <p>
-            {`${review.author.username} posted on
-            ${new Date(review.createdAt).toLocaleDateString()}`}
+            <strong>Director:</strong> {review.director}
           </p>
-          {review.author._id === user._id && (
-            <>
-              <Link to={`/reviews/${reviewId}/edit`}>Edit</Link>
-              <button onClick={() => props.handleDeleteReview(reviewId)}>Delete</button>
-            </>
-          )}
+          <p>
+            <strong>Genre:</strong> {review.genre}
+          </p>
+          <p>
+            <strong>Rating:</strong> {review.rating}
+          </p>
+          <p>{`${review.author.username} posted on ${new Date(review.createdAt).toLocaleDateString()}`}</p>
         </header>
-        <p>{review.text}</p>
+
+        <div className="review-content">
+          <p>{review.review}</p>
+          {review.author._id === user._id && (
+            <div className="review-actions">
+              <Link to={`/reviews/${reviewId}/edit`}>
+                <button className="edit-delete-button">Edit</button>
+              </Link>
+              <button onClick={() => props.handleDeleteReview(reviewId)} className="edit-delete-button">
+                Delete
+              </button>
+            </div>
+          )}
+        </div>
       </section>
-      <section>
+
+      <section className="comments-section">
         <h2>Comments</h2>
-        <CommentForm handleAddComment={handleAddComment} />
-        {!review.comments.length && <p>There are no comments.</p>}
+        {review.comments.length === 0 && <p>No comments yet.</p>}
         {review.comments.map((comment) => (
-          <article key={comment._id}>
+          <article key={comment._id} className="comment">
             <header>
-              <p>
-                {`${comment.author.username} posted on
-                ${new Date(comment.createdAt).toLocaleDateString()}`}
-              </p>
-              {comment.author._id === user._id && (
-                <>
-                  <Link to={`/reviews/${reviewId}/comments/${comment._id}/edit`}>Edit</Link>
-                  <button onClick={() => handleDeleteComment(comment._id)}>Delete</button>
-                </>
-              )}
+              <p>{`${comment.author.username} posted on ${new Date(comment.createdAt).toLocaleDateString()}`}</p>
             </header>
             <p>{comment.text}</p>
+            {comment.author._id === user._id && (
+              <div className="comment-actions">
+                <Link to={`/reviews/${reviewId}/comments/${comment._id}/edit`}>
+                  <button className="edit-delete-button">Edit</button>
+                </Link>
+                <button onClick={() => handleDeleteComment(comment._id)} className="edit-delete-button">
+                  Delete
+                </button>
+              </div>
+            )}
           </article>
         ))}
+        <CommentForm handleAddComment={handleAddComment} />
       </section>
     </main>
   );

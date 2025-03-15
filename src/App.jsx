@@ -54,7 +54,6 @@ const App = () => {
         <Route path='/' element={user ? <Dashboard /> : <Landing />} />
         {user ? (
           <>
-            {/* Protected routes (available only to signed-in users) */}
             <Route path='/reviews' element={<ReviewList reviews={reviews} />} />
             <Route path='/reviews/:reviewId' element={<ReviewDetails handleDeleteReview={handleDeleteReview} />} />
             <Route path='/reviews/new' element={<ReviewForm handleAddReview={handleAddReview} />} />
@@ -63,7 +62,6 @@ const App = () => {
           </>
         ) : (
           <>
-            {/* Non-user routes (available only to guests) */}
             <Route path='/sign-up' element={<SignUpForm />} />
             <Route path='/sign-in' element={<SignInForm />} />
           </>

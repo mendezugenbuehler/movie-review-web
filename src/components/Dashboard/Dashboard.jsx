@@ -20,14 +20,14 @@ const Dashboard = () => {
 
   return (
     <main className="dashboard-page">
-      <img src="/src/assets/images/Dashboard.png" alt="Color TV" className="dashboard-logo" />
+      <img src="/src/assets/images/Dashboard.png" alt="Color TV" className="dashboard" />
       <h1>Welcome, {user.username}</h1>
       <p>
         <a href="/reviews" className="dashboard-link">Explore reviews</a>&nbsp;or&nbsp;
         <a href="/reviews/new" className="dashboard-link">share your own thoughts</a> on the latest films.
       </p>
       <p>The main feature stars the critics, the fans, and the film buffs, including:</p>
-      <ul className="dashboard">
+      <ul className="user-list">
         {users.map(user => (
           <li key={user._id}>{user.username}</li>
         ))}

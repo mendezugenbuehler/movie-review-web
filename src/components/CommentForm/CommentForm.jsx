@@ -34,17 +34,17 @@ const CommentForm = (props) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor='text-input'>Your comment:</label>
+        <form className="comment-form" onSubmit={handleSubmit}>
+            <label htmlFor="text-input">Your comment:</label>
             <textarea
                 required
-                type='text'
-                name='text'
-                id='text-input'
+                name="text"
+                id="text-input"
                 value={formData.text}
                 onChange={handleChange}
+                className="comment-box"
             />
-            <button type='submit'>{commentId ? 'UPDATE COMMENT' : 'SUBMIT COMMENT'}</button>
+            <button type="submit">{commentId ? 'Update Comment' : 'Submit Comment'}</button>
         </form>
     );
 };
