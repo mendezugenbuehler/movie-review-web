@@ -1,0 +1,128 @@
+.review-list-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.reviewlist {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.review-list-page h1 {
+    color: #007bff;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.review-intro {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.review-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+}
+
+.review-box {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.review-box:last-child {
+    margin-bottom: 0;
+}
+
+.review-box header {
+    margin-bottom: 15px;
+}
+
+.review-box h2 {
+    color: #007bff;
+    font-size: 18px;
+    margin: 0;
+}
+
+.review-box p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #0056b3;
+}
+
+.no-reviews {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.no-reviews p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.primary-button,
+.secondary-button {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.primary-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.primary-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.secondary-button {
+    background-color: #f8f9fa;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.secondary-button:hover {
+    background-color: #e9ecef;
+    transform: translateY(-2px);
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    color: #666;
+}

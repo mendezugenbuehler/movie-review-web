@@ -28,11 +28,14 @@ const Dashboard = () => {
         <a href="/reviews/new" className="dashboard-link">share your own thoughts</a> on the latest films.
       </p>
       <p>The main feature stars the critics, the fans, and the film buffs, including:</p>
-      <ul className="user-list">
-        {users.map(user => (
-          <li key={user._id}>{user.username}</li>
+      <div className="user-list-container">
+        {users.map((user, index) => (
+          <span key={user._id} className="user-tag">
+            {user.username}
+            {index < users.length - 1 ? ', ' : ''}
+          </span>
         ))}
-      </ul>
+      </div>
     </main>
   );
 };

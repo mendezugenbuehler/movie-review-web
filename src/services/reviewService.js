@@ -1,3 +1,5 @@
+import { movieService } from './movieService';
+
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/reviews`;
 
 const index = async () => {
@@ -114,6 +116,30 @@ const updateComment = async (reviewId, commentId, commentFormData) => {
     }
 };
 
+const getReviewsByMovieId = async (movieId) => {
+    try {
+        // First get all reviews
+        const allReviews = await index();
+        console.log('All reviews:', allReviews);
+
+        // Get the movie title from the current movie
+        const movieData = await movieService.getMovieDetails(movieId);
+        const movieTitle = movieData.title;
+        console.log('Looking for reviews matching:', { movieId, movieTitle });
+
+        // Filter reviews that match either the tmdbId or the movie title
+        const matchingReviews = allReviews.filter(review => {
+            console.log('Checking review:', review);
+            return review.tmdbId === movieId || review.movie === movieTitle;
+        });
+
+        console.log('Matching reviews:', matchingReviews);
+        return matchingReviews;
+    } catch (error) {
+        console.log('Error in getReviewsByMovieId:', error);
+        return [];
+    }
+};
 
 export {
     index,
@@ -124,4 +150,5 @@ export {
     createComment,
     deleteComment,
     updateComment,
+    getReviewsByMovieId,
 };

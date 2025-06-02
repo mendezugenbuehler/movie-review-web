@@ -238,25 +238,26 @@ button:focus {
   margin-bottom: 15px;
 }
 
-.user-list {
-  list-style-type: none !important;
+.dashboard-page p {
+  margin: 20px 0;
+}
+
+.user-list-container {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 20px 0;
   padding: 0;
-  margin: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
 }
 
-.user-list li {
-  list-style: none !important;
-  display: block;
-  font-size: 18px;
-  padding: 5px 0;
-}
-
-.user-list li::marker {
-  content: "";
-  display: none;
+.user-tag {
+  display: inline;
+  color: #333;
+  font-weight: 600;
 }
 
 .comment-form {
